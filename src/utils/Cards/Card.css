@@ -1,0 +1,8 @@
+.card_container{
+    display: flex;
+    justify-content: space-between;
+    border-radius: 15px;
+    border :1px solid #E7E7E7;
+    font-size: 14px;
+    padding:7px;
+}
