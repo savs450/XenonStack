@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import "./Databot.css";
 import Card from "../utils/Cards/Card";
-// import LinearProgress from '@mui/material/LinearProgress';
-// import { PieChart } from '@mui/x-charts/PieChart';
+
+
+import { Progress } from "antd";
+import DonutChart  from "../utils/PieChart";
+
 
 function Databot() {
   const [option, setOption] = useState("");
@@ -11,7 +14,8 @@ function Databot() {
     "User engangement change vs last week",
     "Provide an overview of this week's IAP Revenue performance",
     "What are the factors of drop in our Sales Revenue this week",
-  ];
+   ];
+
   return (
     <div className="main_container">
       <div className="sidebar">
@@ -100,36 +104,57 @@ function Databot() {
         <div className="just_a_border"></div>
         <h3>Data Overview</h3>
         <div className="overview_section">
-          <div className="metric">
+         <div className="metricss">
+         <div className="metric">
             <span>Total Number of rows</span>
             <strong>34.1M</strong>
           </div>
+          <div className="metric">
+            <span>Total Number of Columns</span>
+            <strong>2</strong>
+          </div>
+         </div>
           <div className="metric">
             <h6>MetaData</h6>
             <div className="metadata">
               <table>
                 <tr>
-                  <td classname='key'>Name</td>
+                  <td classname="key">Name</td>
                   <td>Samples</td>
                 </tr>
                 <tr>
-                  <td classname='key'>Created at</td>
+                  <td classname="key">Created at</td>
                   <td>20 jul 2022</td>
                 </tr>
                 <tr>
-                  <td classname='key'>Realtes to</td>
+                  <td classname="key">Realtes to</td>
                   <td>dim_book</td>
                 </tr>
                 <tr>
-                  <td classname='key'>Connection</td>
+                  <td classname="key">Connection</td>
                   <td>Postgre</td>
                 </tr>
               </table>
             </div>
           </div>
-          <div className="metric">
+          <div className="metric" style={{ width: "200px" }}>
             <h6>SLA</h6>
-
+            <Progress percent={100} />
+            <div className="report">
+              <h6>Test Report</h6>
+              <span>See All</span>
+            </div>
+            <span>100% score</span>
+            <Progress percent={100} />
+          </div>
+        </div>
+        <h5>Data Quality</h5>
+        <div className="data_quality">
+          <div className="charts">
+            <div className="metric" style={{ width: "200px" ,height:"200px" }} >
+            <DonutChart />
+            </div>
+            <div className="metric"></div>
           </div>
         </div>
       </div>
